@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arti-Tech | Calculatrice</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Exo+2:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <!-- ESPACE LOGO : remplace cette div par ton image -->
+      
+      <div class="logo-placeholder">
+        <span class="logo-icon"><a href="Index.html"><img src="PIC/logo.png" alt="mon logo"> </a></span>
+        <!-- <div class="logo-text">
+          <span class="logo-title">ARTI<span class="accent">-</span>TECH</span>
+          <span class="logo-sub">Art &amp; Technologie</span>
+        </div>-->
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="apropos.html" class="nav-link">À Propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="biblio.html" class="nav-link">Bibliothèques</a>
+      <a href="calculatrice.html" class="nav-link active">Calculatrice</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="biblio.html">Bibliothèques</a>
+    <a href="calculatrice.html">Calculatrice</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>Calcula<span class="accent">trice</span></h1>
+  <p>Calculatrice scientifique Arti-Tech</p>
+</section>
+
+<section class="section calc-section">
+  <div class="container calc-container">
+
+    <!-- TABS -->
+    <div class="calc-tabs">
+      <button class="calc-tab active" onclick="switchCalc(this,'standard')">Standard</button>
+      <button class="calc-tab" onclick="switchCalc(this,'scientifique')">Scientifique</button>
+      <button class="calc-tab" onclick="switchCalc(this,'conversion')">Conversion</button>
+    </div>
+
+    <!-- CALCULATRICE STANDARD -->
+    <div class="calc-panel" id="standard">
+      <div class="calc-display">
+        <div class="calc-expression" id="expression"></div>
+        <div class="calc-screen" id="screen">0</div>
+      </div>
+      <div class="calc-buttons">
+        <button class="calc-btn span2 btn-clear" onclick="clearAll()">AC</button>
+        <button class="calc-btn btn-op" onclick="backspace()">⌫</button>
+        <button class="calc-btn btn-op" onclick="inputOp('%')">%</button>
+
+        <button class="calc-btn" onclick="inputNum('7')">7</button>
+        <button class="calc-btn" onclick="inputNum('8')">8</button>
+        <button class="calc-btn" onclick="inputNum('9')">9</button>
+        <button class="calc-btn btn-orange" onclick="inputOp('÷')">÷</button>
+
+        <button class="calc-btn" onclick="inputNum('4')">4</button>
+        <button class="calc-btn" onclick="inputNum('5')">5</button>
+        <button class="calc-btn" onclick="inputNum('6')">6</button>
+        <button class="calc-btn btn-orange" onclick="inputOp('×')">×</button>
+
+        <button class="calc-btn" onclick="inputNum('1')">1</button>
+        <button class="calc-btn" onclick="inputNum('2')">2</button>
+        <button class="calc-btn" onclick="inputNum('3')">3</button>
+        <button class="calc-btn btn-orange" onclick="inputOp('−')">−</button>
+
+        <button class="calc-btn span2" onclick="inputNum('0')">0</button>
+        <button class="calc-btn" onclick="inputDot()">.</button>
+        <button class="calc-btn btn-orange" onclick="inputOp('+')">+</button>
+
+        <button class="calc-btn span4 btn-equals" onclick="calculate()">=</button>
+      </div>
+      <div class="calc-history" id="history">
+        <h4>Historique</h4>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <!-- CALCULATRICE SCIENTIFIQUE -->
+    <div class="calc-panel hidden" id="scientifique">
+      <div class="calc-display">
+        <div class="calc-expression" id="sci-expression"></div>
+        <div class="calc-screen" id="sci-screen">0</div>
+      </div>
+      <div class="calc-buttons sci-grid">
+        <button class="calc-btn btn-func" onclick="sciFunc('sin')">sin</button>
+        <button class="calc-btn btn-func" onclick="sciFunc('cos')">cos</button>
+        <button class="calc-btn btn-func" onclick="sciFunc('tan')">tan</button>
+        <button class="calc-btn btn-func" onclick="sciFunc('log')">log</button>
+        <button class="calc-btn btn-func" onclick="sciFunc('sqrt')">√</button>
+
+        <button class="calc-btn btn-func" onclick="sciFunc('pow2')">x²</button>
+        <button class="calc-btn btn-func" onclick="sciConst('π')">π</button>
+        <button class="calc-btn btn-func" onclick="sciConst('e')">e</button>
+        <button class="calc-btn btn-op" onclick="sciBack()">⌫</button>
+        <button class="calc-btn btn-clear" onclick="sciClear()">AC</button>
+
+        <button class="calc-btn" onclick="sciNum('7')">7</button>
+        <button class="calc-btn" onclick="sciNum('8')">8</button>
+        <button class="calc-btn" onclick="sciNum('9')">9</button>
+        <button class="calc-btn btn-orange" onclick="sciOp('÷')">÷</button>
+        <button class="calc-btn btn-orange" onclick="sciOp('×')">×</button>
+
+        <button class="calc-btn" onclick="sciNum('4')">4</button>
+        <button class="calc-btn" onclick="sciNum('5')">5</button>
+        <button class="calc-btn" onclick="sciNum('6')">6</button>
+        <button class="calc-btn btn-orange" onclick="sciOp('−')">−</button>
+        <button class="calc-btn btn-orange" onclick="sciOp('+')">+</button>
+
+        <button class="calc-btn" onclick="sciNum('1')">1</button>
+        <button class="calc-btn" onclick="sciNum('2')">2</button>
+        <button class="calc-btn" onclick="sciNum('3')">3</button>
+        <button class="calc-btn" onclick="sciDot()">.</button>
+        <button class="calc-btn" onclick="sciNum('0')">0</button>
+
+        <button class="calc-btn span5 btn-equals" onclick="sciCalc()">=</button>
+      </div>
+    </div>
+
+    <!-- CONVERSION -->
+    <div class="calc-panel hidden" id="conversion">
+      <div class="conv-tabs">
+        <button class="conv-tab active" onclick="showConv(this,'temp')">Température</button>
+        <button class="conv-tab" onclick="showConv(this,'long')">Longueur</button>
+        <button class="conv-tab" onclick="showConv(this,'poids')">Poids</button>
+      </div>
+
+      <div class="conv-panel" id="temp">
+        <h3>Conversion de Température</h3>
+        <div class="conv-row">
+          <input type="number" id="cel" placeholder="Celsius" oninput="convertTemp('c')"/>
+          <span>°C</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="fahr" placeholder="Fahrenheit" oninput="convertTemp('f')"/>
+          <span>°F</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="kelv" placeholder="Kelvin" oninput="convertTemp('k')"/>
+          <span>K</span>
+        </div>
+      </div>
+
+      <div class="conv-panel hidden" id="long">
+        <h3>Conversion de Longueur</h3>
+        <div class="conv-row">
+          <input type="number" id="meter" placeholder="Mètres" oninput="convertLen('m')"/>
+          <span>m</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="km" placeholder="Kilomètres" oninput="convertLen('km')"/>
+          <span>km</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="mile" placeholder="Miles" oninput="convertLen('mi')"/>
+          <span>mi</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="feet" placeholder="Pieds" oninput="convertLen('ft')"/>
+          <span>ft</span>
+        </div>
+      </div>
+
+      <div class="conv-panel hidden" id="poids">
+        <h3>Conversion de Poids</h3>
+        <div class="conv-row">
+          <input type="number" id="kg" placeholder="Kilogrammes" oninput="convertWeight('kg')"/>
+          <span>kg</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="gram" placeholder="Grammes" oninput="convertWeight('g')"/>
+          <span>g</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="lb" placeholder="Livres" oninput="convertWeight('lb')"/>
+          <span>lb</span>
+        </div>
+        <div class="conv-row">
+          <input type="number" id="oz" placeholder="Onces" oninput="convertWeight('oz')"/>
+          <span>oz</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">ARTI<span class="accent">-</span>TECH</div>
+    <p>© 2026 Arti-Tech — Art &amp; Technologie</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="biblio.html">Bibliothèques</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// ===== STANDARD CALC =====
+let expr = '', current = '0', hasOp = false;
+
+function updateScreen() {
+  document.getElementById('screen').textContent = current;
+  document.getElementById('expression').textContent = expr;
+}
+
+function inputNum(n) {
+  if (current === '0' || hasOp) { current = n; hasOp = false; }
+  else current += n;
+  updateScreen();
+}
+
+function inputOp(op) {
+  expr = current + ' ' + op;
+  hasOp = true;
+  updateScreen();
+}
+
+function inputDot() {
+  if (!current.includes('.')) current += '.';
+  updateScreen();
+}
+
+function clearAll() {
+  expr = ''; current = '0'; hasOp = false;
+  updateScreen();
+}
+
+function backspace() {
+  current = current.length > 1 ? current.slice(0, -1) : '0';
+  updateScreen();
+}
+
+function calculate() {
+  if (!expr) return;
+  const parts = expr.trim().split(' ');
+  const a = parseFloat(parts[0]), op = parts[1], b = parseFloat(current);
+  let result;
+  if (op === '+') result = a + b;
+  else if (op === '−') result = a - b;
+  else if (op === '×') result = a * b;
+  else if (op === '÷') result = b !== 0 ? a / b : 'Erreur';
+  else if (op === '%') result = a % b;
+  const fullExpr = parts[0] + ' ' + op + ' ' + b + ' = ' + result;
+  const li = document.createElement('li');
+  li.textContent = fullExpr;
+  document.getElementById('historyList').prepend(li);
+  current = String(result);
+  expr = '';
+  hasOp = false;
+  updateScreen();
+}
+
+// ===== SCIENTIFIC CALC =====
+let sciExpr = '', sciCurrent = '0', sciHasOp = false;
+
+function sciScreen() {
+  document.getElementById('sci-screen').textContent = sciCurrent;
+  document.getElementById('sci-expression').textContent = sciExpr;
+}
+
+function sciNum(n) {
+  if (sciCurrent === '0' || sciHasOp) { sciCurrent = n; sciHasOp = false; }
+  else sciCurrent += n;
+  sciScreen();
+}
+
+function sciOp(op) { sciExpr = sciCurrent + ' ' + op; sciHasOp = true; sciScreen(); }
+function sciDot() { if (!sciCurrent.includes('.')) sciCurrent += '.'; sciScreen(); }
+function sciClear() { sciExpr = ''; sciCurrent = '0'; sciHasOp = false; sciScreen(); }
+function sciBack() { sciCurrent = sciCurrent.length > 1 ? sciCurrent.slice(0, -1) : '0'; sciScreen(); }
+
+function sciFunc(fn) {
+  const v = parseFloat(sciCurrent);
+  let r;
+  if (fn === 'sin') r = Math.sin(v * Math.PI / 180);
+  else if (fn === 'cos') r = Math.cos(v * Math.PI / 180);
+  else if (fn === 'tan') r = Math.tan(v * Math.PI / 180);
+  else if (fn === 'log') r = Math.log10(v);
+  else if (fn === 'sqrt') r = Math.sqrt(v);
+  else if (fn === 'pow2') r = v * v;
+  sciCurrent = String(parseFloat(r.toFixed(8)));
+  sciScreen();
+}
+
+function sciConst(c) {
+  sciCurrent = c === 'π' ? String(Math.PI) : String(Math.E);
+  sciScreen();
+}
+
+function sciCalc() {
+  if (!sciExpr) return;
+  const parts = sciExpr.trim().split(' ');
+  const a = parseFloat(parts[0]), op = parts[1], b = parseFloat(sciCurrent);
+  let result;
+  if (op === '+') result = a + b;
+  else if (op === '−') result = a - b;
+  else if (op === '×') result = a * b;
+  else if (op === '÷') result = b !== 0 ? a / b : 'Erreur';
+  sciCurrent = String(parseFloat(result.toFixed(8)));
+  sciExpr = '';
+  sciHasOp = false;
+  sciScreen();
+}
+
+// ===== TABS =====
+function switchCalc(btn, id) {
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.calc-panel').forEach(p => p.classList.add('hidden'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.remove('hidden');
+}
+
+function showConv(btn, id) {
+  btn.closest('.calc-panel').querySelectorAll('.conv-tab').forEach(t => t.classList.remove('active'));
+  btn.closest('.calc-panel').querySelectorAll('.conv-panel').forEach(p => p.classList.add('hidden'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.remove('hidden');
+}
+
+// ===== CONVERSIONS =====
+function convertTemp(from) {
+  let c;
+  if (from === 'c') c = parseFloat(document.getElementById('cel').value) || 0;
+  else if (from === 'f') c = (parseFloat(document.getElementById('fahr').value) - 32) * 5/9;
+  else if (from === 'k') c = parseFloat(document.getElementById('kelv').value) - 273.15;
+  if (from !== 'c') document.getElementById('cel').value = round(c);
+  if (from !== 'f') document.getElementById('fahr').value = round(c * 9/5 + 32);
+  if (from !== 'k') document.getElementById('kelv').value = round(c + 273.15);
+}
+
+function convertLen(from) {
+  let m;
+  const v = parseFloat(document.getElementById(from === 'm' ? 'meter' : from === 'km' ? 'km' : from === 'mi' ? 'mile' : 'feet').value) || 0;
+  if (from === 'm') m = v;
+  else if (from === 'km') m = v * 1000;
+  else if (from === 'mi') m = v * 1609.344;
+  else if (from === 'ft') m = v * 0.3048;
+  if (from !== 'm') document.getElementById('meter').value = round(m);
+  if (from !== 'km') document.getElementById('km').value = round(m / 1000);
+  if (from !== 'mi') document.getElementById('mile').value = round(m / 1609.344);
+  if (from !== 'ft') document.getElementById('feet').value = round(m / 0.3048);
+}
+
+function convertWeight(from) {
+  let kg;
+  const v = parseFloat(document.getElementById(from).value) || 0;
+  if (from === 'kg') kg = v;
+  else if (from === 'g') kg = v / 1000;
+  else if (from === 'lb') kg = v * 0.453592;
+  else if (from === 'oz') kg = v * 0.0283495;
+  if (from !== 'kg') document.getElementById('kg').value = round(kg);
+  if (from !== 'g') document.getElementById('gram').value = round(kg * 1000);
+  if (from !== 'lb') document.getElementById('lb').value = round(kg / 0.453592);
+  if (from !== 'oz') document.getElementById('oz').value = round(kg / 0.0283495);
+}
+
+function round(v) { return Math.round(v * 10000) / 10000; }
+</script>
+</body>
+</html>

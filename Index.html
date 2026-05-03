@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arti-Tech | Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Exo+2:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ===== HEADER / NAV ===== -->
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <!-- ESPACE LOGO : remplace cette div par ton image -->
+      
+      <div class="logo-placeholder">
+        <span class="logo-icon"><a href="Index.html"><img src="PIC/logo.png" alt="mon logo"> </a></span>
+        <!-- <div class="logo-text">
+          <span class="logo-title">ARTI<span class="accent">-</span>TECH</span>
+          <span class="logo-sub">Art &amp; Technologie</span>
+        </div>-->
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link active">Accueil</a>
+      <a href="apropos.html" class="nav-link">À Propos</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="biblio.html" class="nav-link">Bibliothèques</a>
+      <a href="calculatrice.html" class="nav-link">Calculatrice</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="biblio.html">Bibliothèques</a>
+    <a href="calculatrice.html">Calculatrice</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Bienvenue chez</p>
+    <h1 class="hero-title">ARTI<span class="accent">-</span>TECH</h1>
+    <p class="hero-tagline">Là où l'Art rencontre la Technologie</p>
+    <div class="hero-btns">
+      <a href="apropos.html" class="btn btn-primary">Découvrir</a>
+      <a href="contact.html" class="btn btn-outline">Me Contacter</a>
+    </div>
+  </div>
+  <div class="hero-shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+  </div>
+</section>
+
+<!-- ===== SECTION PASSIONS ===== -->
+<section class="section passions-section" id="passions">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Explorer</span>
+      <h2>Mes Domaines &amp; Passions</h2>
+      <p>Clique sur un domaine pour l'explorer et tester tes connaissances</p>
+    </div>
+    <div class="passion-grid">
+
+      <!-- ART -->
+      <div class="passion-card" onclick="openPanel('art')">
+        <div class="passion-icon">🎨</div>
+        <h3>Art</h3>
+        <p>Histoire, techniques, mouvements artistiques</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- INFORMATIQUE -->
+      <div class="passion-card" onclick="openPanel('informatique')">
+        <div class="passion-icon">💻</div>
+        <h3>Informatique</h3>
+        <p>Dépannage, Réseaux, Bureautique</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- SGBD / MYSQL -->
+      <div class="passion-card" onclick="openPanel('sgbd')">
+        <div class="passion-icon">🗄️</div>
+        <h3>SGBD &amp; MySQL</h3>
+        <p>Bases de données, requêtes SQL</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- PROGRAMMATION -->
+      <div class="passion-card" onclick="openPanel('prog')">
+        <div class="passion-icon">⌨️</div>
+        <h3>Programmation</h3>
+        <p>Fondamentaux, Langage C, Java, POO</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- COMPTABILITE -->
+      <div class="passion-card" onclick="openPanel('compta')">
+        <div class="passion-icon">📊</div>
+        <h3>Comptabilité</h3>
+        <p>Principes, bilans, gestion financière</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- SANTE MENTALE -->
+      <div class="passion-card" onclick="openPanel('sante')">
+        <div class="passion-icon">🧠</div>
+        <h3>Santé Mentale</h3>
+        <p>Bien-être, psychologie, équilibre</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- DRYWALLER -->
+      <div class="passion-card" onclick="openPanel('drywaller')">
+        <div class="passion-icon">🏗️</div>
+        <h3>Drywaller</h3>
+        <p>Construction, cloisons, placoplatre</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- PHOTOVOLTAIQUE -->
+      <div class="passion-card" onclick="openPanel('photo')">
+        <div class="passion-icon">☀️</div>
+        <h3>Photovoltaïque</h3>
+        <p>Énergie solaire, panneaux, systèmes</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- INFOGRAPHIE -->
+      <div class="passion-card" onclick="openPanel('Infographie')">
+        <div class="passion-icon">🌄</div>
+        <h3>Infographie</h3>
+        <p>Creaton d'identite visuelle, Charte graphiques, Formation</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <!-- Open AI -->
+    <div class="passion-card" onclick="openPanel('IA') ">
+  <div class="passion-icon" >🤖</div>
+    <h3>Intelligence Artificielle</h3>
+    <p>Comment utiliser IA, Creation contenu</p>
+    <span class="card-arrow">→</span>
+    </div>
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PANELS PASSIONS ===== -->
+<div class="overlay" id="overlay" onclick="closePanel()"></div>
+
+<!-- Panel ART -->
+<div class="panel" id="panel-art">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🎨 L'Art de A à Z</h2>
+    <div class="panel-body">
+      <h3>Qu'est-ce que l'Art ?</h3>
+      <p>L'art est une expression humaine qui traverse toutes les civilisations. Il englobe la peinture, la sculpture, la musique, la littérature, l'architecture, la danse et bien plus encore.</p>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/ART.jpg" alt=""></span></div>
+      <h3>Les grands mouvements artistiques</h3>
+      <ul>
+        <li><strong>Renaissance (XIVe–XVIIe s.)</strong> – Retour à l'Antiquité, humanisme, perspective.</li>
+        <li><strong>Baroque (XVIIe s.)</strong> – Mouvement, lumière dramatique, émotion.</li>
+        <li><strong>Impressionnisme (XIXe s.)</strong> – Lumière naturelle, coups de pinceau visibles.</li>
+        <li><strong>Cubisme (XXe s.)</strong> – Formes géométriques, Picasso, Braque.</li>
+        <li><strong>Art Abstrait</strong> – Formes, couleurs sans représentation figurative.</li>
+        <li><strong>Art Numérique</strong> – Création avec outils informatiques.</li>
+      </ul>
+      <h3>Techniques artistiques</h3>
+      <p>Peinture à l'huile, aquarelle, acrylique, pastel, dessin au crayon, gravure, lithographie, sculpture, photographie, art numérique, street art...</p>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/ART.jpg" alt=""></span></div>
+    </div>
+    <!-- QUIZ ART -->
+    <div class="quiz-section">
+      <h3>🧩 Quiz sur l'Art</h3>
+      <div id="quiz-art"></div>
+      <button class="btn btn-primary" onclick="startQuiz('art')">Démarrer le Quiz</button>
+      <div id="quiz-art-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Panel INFORMATIQUE -->
+<div class="panel" id="panel-informatique">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>💻 Informatique</h2>
+    <div class="panel-body">
+
+      <div class="sub-tabs">
+        <button class="sub-tab active" onclick="showSubTab(this,'dep')">Dépannage</button>
+        <button class="sub-tab" onclick="showSubTab(this,'res')">Réseaux</button>
+        <button class="sub-tab" onclick="showSubTab(this,'bur')">Bureautique</button>
+      </div>
+
+      <div class="sub-content" id="dep">
+        <h3>Dépannage Informatique</h3>
+        <p>Le dépannage consiste à diagnostiquer et résoudre les pannes matérielles et logicielles.</p>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/CODE.jpg" alt=""></span></div>
+        <ul>
+          <li>Diagnostic des pannes (BIOS, POST, écrans bleus)</li>
+          <li>Réinstallation du système d'exploitation</li>
+          <li>Remplacement de composants (RAM, disque dur, écran)</li>
+          <li>Maintenance préventive et nettoyage</li>
+          <li>Sécurisation contre les virus et malwares</li>
+        </ul>
+        <!--Ajoute document-->
+        <iframe src="PDF/Diodes.pdf" width="500px" height="600px"></iframe>
+        
+      </div>
+      <div class="sub-content hidden" id="res">
+        <h3>Réseau Informatique</h3>
+        <p>Un réseau informatique connecte des équipements pour partager des ressources.</p>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/CODE2.jpg" alt=""></span></div>
+        <ul>
+          <li>Modèle OSI : 7 couches de communication</li>
+          <li>Protocoles : TCP/IP, HTTP, DNS, DHCP</li>
+          <li>Équipements : routeur, switch, point d'accès</li>
+          <li>Adressage IP (IPv4, IPv6, masques de sous-réseau)</li>
+          <li>Sécurité réseau : pare-feu, VPN, chiffrement</li>
+        </ul>
+        <iframe src="PDF/modeles_OSI_TCPIP().pdf" width="500px" height="600"></iframe>
+      </div>
+      <div class="sub-content hidden" id="bur">
+        <h3>Bureautique</h3>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/COMPTAB.jpg" alt=""></span></div>
+        <ul>
+          <li><strong>Word</strong> – Traitement de texte, mise en page, publipostage</li>
+          <li><strong>Excel</strong> – Tableaux, formules, graphiques, macros</li>
+          <li><strong>PowerPoint</strong> – Présentations, animations, diapositives</li>
+          <li><strong>Access</strong> – Bases de données relationnelles, formulaires, états</li>
+        </ul>
+        <iframe src="PDF/livre_informatique.pdf" width="500px" height="600"></iframe>
+
+      </div>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Informatique</h3>
+      <div id="quiz-informatique"></div>
+      <button class="btn btn-primary" onclick="startQuiz('informatique')">Démarrer le Quiz</button>
+      <div id="quiz-informatique-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Panel SGBD -->
+<div class="panel" id="panel-sgbd">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🗄️ SGBD &amp; MySQL</h2>
+    <div class="panel-body">
+      <h3>Qu'est-ce qu'un SGBD ?</h3>
+      <p>Un Système de Gestion de Base de Données (SGBD) permet de stocker, organiser et manipuler des données de manière structurée.</p>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span>📸 Ajoute une image ici</span></div>
+      <h3>MySQL en pratique</h3>
+      <ul>
+        <li>Création de bases : <code>CREATE DATABASE nom;</code></li>
+        <li>Tables : <code>CREATE TABLE, ALTER TABLE, DROP TABLE</code></li>
+        <li>Requêtes : <code>SELECT, INSERT, UPDATE, DELETE</code></li>
+        <li>Jointures : <code>INNER JOIN, LEFT JOIN, RIGHT JOIN</code></li>
+        <li>Fonctions : <code>COUNT, SUM, AVG, MAX, MIN</code></li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz SGBD</h3>
+      <div id="quiz-sgbd"></div>
+      <button class="btn btn-primary" onclick="startQuiz('sgbd')">Démarrer le Quiz</button>
+      <div id="quiz-sgbd-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Panel PROGRAMMATION -->
+<div class="panel" id="panel-prog">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>⌨️ Programmation</h2>
+    <div class="panel-body">
+      <div class="sub-tabs">
+        <button class="sub-tab active" onclick="showSubTab(this,'fond')">Fondamentaux</button>
+        <button class="sub-tab" onclick="showSubTab(this,'langc')">Langage C</button>
+        <button class="sub-tab" onclick="showSubTab(this,'java')">Java</button>
+        <button class="sub-tab" onclick="showSubTab(this,'poo')">POO</button>
+      </div>
+      <div class="sub-content" id="fond">
+        <h3>Fondamentaux de la Programmation</h3>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span>📸 Ajoute une image ici</span></div>
+        <ul>
+          <li>Variables, types de données, opérateurs</li>
+          <li>Structures conditionnelles : if, else, switch</li>
+          <li>Boucles : for, while, do-while</li>
+          <li>Fonctions et récursivité</li>
+          <li>Algorithmes et complexité</li>
+        </ul>
+      </div>
+      <div class="sub-content hidden" id="langc">
+        <h3>Langage C</h3>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/CODE2.jpg" alt="CODE"></span></div>
+        <ul>
+          <li>Langage compilé de bas niveau</li>
+          <li>Pointeurs et gestion mémoire</li>
+          <li>Structures (struct), tableaux</li>
+          <li>Fichiers et entrées/sorties</li>
+          <li>Bibliothèques standard : stdio.h, stdlib.h</li>
+        </ul>
+      </div>
+      <div class="sub-content hidden" id="java">
+        <h3>Java</h3>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/CODE.jpg" alt="CODE"></span></div>
+        <ul>
+          <li>Langage orienté objet, multi-plateforme (JVM)</li>
+          <li>Classes, objets, héritage, interfaces</li>
+          <li>Collections : ArrayList, HashMap</li>
+          <li>Gestion des exceptions : try/catch</li>
+          <li>Java SE vs Java EE</li>
+        </ul>
+      </div>
+      <div class="sub-content hidden" id="poo">
+        <h3>Programmation Orientée Objet</h3>
+        <!-- ESPACE PHOTO -->
+        <div class="photo-placeholder"><span><img src="PIC/CODE.jpg" alt="CODE"></span></div>
+        <ul>
+          <li><strong>Encapsulation</strong> – Protéger les données internes</li>
+          <li><strong>Héritage</strong> – Réutiliser et étendre les classes</li>
+          <li><strong>Polymorphisme</strong> – Comportements multiples d'une même méthode</li>
+          <li><strong>Abstraction</strong> – Masquer la complexité</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Programmation</h3>
+      <div id="quiz-prog"></div>
+      <button class="btn btn-primary" onclick="startQuiz('prog')">Démarrer le Quiz</button>
+      <div id="quiz-prog-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Panel COMPTABILITE -->
+<div class="panel" id="panel-compta">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>📊 Comptabilité</h2>
+    <div class="panel-body">
+      <h3>Les bases de la comptabilité</h3>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/COMPTAB.jpg" alt="COMPTABILITE"></span></div>
+      <ul>
+        <li>Actif, Passif, Capitaux propres</li>
+        <li>Le bilan comptable</li>
+        <li>Le compte de résultat</li>
+        <li>Les journaux comptables</li>
+        <li>Débit et Crédit</li>
+        <li>TVA et fiscalité</li>
+        <li>Amortissements et provisions</li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Comptabilité</h3>
+      <div id="quiz-compta"></div>
+      <button class="btn btn-primary" onclick="startQuiz('compta')">Démarrer le Quiz</button>
+      <div id="quiz-compta-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Panel SANTE MENTALE -->
+<div class="panel" id="panel-sante">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🧠 Santé Mentale</h2>
+    <div class="panel-body">
+      <h3>Comprendre la santé mentale</h3>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/IA PIC.jpg" alt="Intelligence Artificielle"></span></div>
+      <ul>
+        <li>Définition : équilibre émotionnel, psychologique et social</li>
+        <li>Les troubles courants : anxiété, dépression, burnout</li>
+        <li>Importance du sommeil et de l'activité physique</li>
+        <li>Techniques : méditation, respiration, pleine conscience</li>
+        <li>Quand consulter un professionnel ?</li>
+        <li>Briser le tabou autour de la santé mentale</li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Santé Mentale</h3>
+      <div id="quiz-sante"></div>
+      <button class="btn btn-primary" onclick="startQuiz('sante')">Démarrer le Quiz</button>
+      <div id="quiz-sante-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Panel DRYWALLER -->
+<div class="panel" id="panel-drywaller">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🏗️ Drywaller</h2>
+    <div class="panel-body">
+      <h3>Le métier de Drywaller</h3>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/SHEETWORK.jpg" alt="drywaller"></span></div>
+      <ul>
+        <li>Pose de plaques de plâtre (gypse/drywall)</li>
+        <li>Ossature métallique : rails et montants</li>
+        <li>Joints et enduits : bande, couche de fond, finition</li>
+        <li>Isolation thermique et acoustique</li>
+        <li>Plafonds suspendus et faux plafonds</li>
+        <li>Outils : couteau à enduire, visseuse, coupe-plaques</li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Drywaller</h3>
+      <div id="quiz-drywaller"></div>
+      <button class="btn btn-primary" onclick="startQuiz('drywaller')">Démarrer le Quiz</button>
+      <div id="quiz-drywaller-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Panel PHOTOVOLTAIQUE -->
+<div class="panel" id="panel-photo">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>☀️ Photovoltaïque</h2>
+    <div class="panel-body">
+      <h3>L'énergie solaire photovoltaïque</h3>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/PANNO.jpg" alt="Installation SOLAIRE"></span></div>
+      <ul>
+        <li>Principe : conversion de la lumière solaire en électricité</li>
+        <li>Types de panneaux : monocristallin, polycristallin, amorphe</li>
+        <li>Composants : onduleur, régulateur, batterie</li>
+        <li>Systèmes : autonome (off-grid) ou connecté au réseau (on-grid)</li>
+        <li>Dimensionnement d'une installation</li>
+        <li>Maintenance et rentabilité</li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz Photovoltaïque</h3>
+      <div id="quiz-photo"></div>
+      <button class="btn btn-primary" onclick="startQuiz('photo')">Démarrer le Quiz</button>
+      <div id="quiz-photo-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+<!-- Panel infographie -->
+<div class="panel" id="panel-Infographie">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🌄 L'Infographie de A à Z</h2>
+    <div class="panel-body">
+      <h3>Qu'est-ce que l'Infographie ?</h3>
+      <p>l'infographie est l'art et la technique de créer des images, des diagrammes et des animations à l'aide d'un ordinateur. </p>
+      <!-- ESPACE PHOTO -->
+    <div class="photo-placeholder">
+    <span><img src="PIC\exInfo.jpeg" alt="PHOTO D'UNE CHARTE GRAPHIQUE"></span></div>
+
+     <P> C'est le pilier de tout ce que vous voyez à l'écran qui n'est pas une simple photo ou un texte brut.
+
+      On peut la diviser en deux grandes catégories :
+      
+      1. L'infographie 2D : Elle crée des images plates avec de la hauteur et de la largeur.
+         · Exemples : Logos, illustrations, interfaces de sites web, graphiques de données.
+         · Logiciels : Adobe Illustrator, Photoshop, GIMP, Inkscape.
+      2. L'infographie 3D : Elle ajoute la profondeur pour créer des objets et des scènes qui semblent réels.
+         · Exemples : Effets spéciaux de films (MCU, Avatar), jeux vidéo, plans architecturaux, simulateurs de vol.
+         · Logiciels : Blender, Autodesk Maya, 3ds Max, Cinema 4D.</p>
+       <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC\INFOGRAPHIE.jpeg" alt="PHOTO D'UNE CHARTE GRAPHIQUE"></span></div>
+    </div>
+    <!-- QUIZ INFOGRAPHIE -->
+    <div class="quiz-section">
+      <h3>🧩 Quiz sur l'Infographie</h3>
+      <div id="quiz-art"></div>
+      <button class="btn btn-primary" onclick="startQuiz('')">Démarrer le Quiz</button>
+      <div id="quiz-art-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Intelligence Artificielle -->
+<div class="panel" id="panel-IA">
+  <button class="panel-close" onclick="closePanel()">✕</button>
+  <div class="panel-content">
+    <h2>🤖</h2>
+    <div class="panel-body">
+      <h3>Les bases d'IA</h3>
+      <!-- ESPACE PHOTO -->
+      <div class="photo-placeholder"><span><img src="PIC/IA PIC.jpg" alt="IA"></span></div>
+      <ul>
+        <li>DALL·E (OpenAI)
+          Génération d'images à partir de texte .
+        </li>
+        <li>Canva AI
+          Création graphique, présentations, images</li>
+        <li>Adobe Firefly
+          Génération et retouche d'images</li>
+        <li>ElevenLabs
+          Génération de voix et doublage audio</li>
+        <li>Gamma AI
+          Création automatique de présentations</li>
+        <li>Remove.bg
+          Suppression automatique de fond d'image</li>
+        <li>Claude (Anthropic)
+          Conversation, rédaction, code, analyse</li>
+      </ul>
+    </div>
+    <div class="quiz-section">
+      <h3>🧩 Quiz IA</h3>
+      <div id="quiz-compta"></div>
+      <button class="btn btn-primary" onclick="startQuiz('IA')">Démarrer le Quiz</button>
+      <div id="quiz-compta-result" class="quiz-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="main-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">ARTI<span class="accent">-</span>TECH</div>
+    <p>© 2026 Arti-Tech — Art &amp; Technologie</p>
+    <div class="footer-links">
+      <a href="apropos.html">À Propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="biblio.html">Bibliothèques</a>
+      <a href="calculatrice.html">Calculatrice</a>
+    </div>
+  </div>
+</footer>
+
+<script src="quiz.js"></script>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+  function openPanel(id) {
+    document.getElementById('overlay').classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel() {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function showSubTab(btn, id) {
+    const panel = btn.closest('.panel-content');
+    panel.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+    panel.querySelectorAll('.sub-content').forEach(c => c.classList.add('hidden'));
+    btn.classList.add('active');
+    document.getElementById(id).classList.remove('hidden');
+  }
+</script>
+</body>
+</html>

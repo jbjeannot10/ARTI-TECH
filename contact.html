@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arti-Tech | Contact</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Exo+2:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <!-- ESPACE LOGO : remplace cette div par ton image -->
+      
+      <div class="logo-placeholder">
+        <span class="logo-icon"><a href="Index.html"><img src="PIC/logo.png" alt="mon logo"> </a></span>
+        <!-- <div class="logo-text">
+          <span class="logo-title">ARTI<span class="accent">-</span>TECH</span>
+          <span class="logo-sub">Art &amp; Technologie</span>
+        </div>-->
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="apropos.html" class="nav-link">À Propos</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="biblio.html" class="nav-link">Bibliothèques</a>
+      <a href="calculatrice.html" class="nav-link">Calculatrice</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="contact.html">Contact</a>
+    <a href="biblio.html">Bibliothèques</a>
+    <a href="calculatrice.html">Calculatrice</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>Me <span class="accent">Contacter</span></h1>
+  <p>Disponible pour tout projet ou collaboration</p>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+
+    <!-- COORDONNEES -->
+    <div class="contact-info">
+      <h2>Mes Coordonnées</h2>
+      <p>N'hésite pas à me joindre via l'un de ces canaux :</p>
+
+      <div class="contact-cards">
+
+        <a href="tel:+50946961075" class="contact-card">
+          <div class="contact-card-icon">📱</div>
+          <div>
+            <strong>Téléphone 1</strong>
+            <span>+509 4696-1075</span>
+          </div>
+        </a>
+
+        <a href="tel:+50940379896" class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div>
+            <strong>Téléphone 2</strong>
+            <span>+509 4037-9896</span>
+          </div>
+        </a>
+
+        <!-- REMPLACE L'EMAIL CI-DESSOUS PAR LE TIEN -->
+        <a href="mailto:tonmail@gmail.com" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div>
+            <strong>Gmail</strong>
+            <span>jbjeannot10@gmail.com</span>
+          </div>
+        </a>
+
+        <!-- REMPLACE LE LIEN GOOGLE CI-DESSOUS -->
+        <a href="https://maps.google.com" target="_blank" class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div>
+            <strong>Google Maps</strong>
+            <span>Voir ma localisation</span>
+          </div>
+        </a>
+
+        <!-- REMPLACE LE LIEN LINKEDIN CI-DESSOUS -->
+        <a href="https://linkedin.com/in/ton-profil" target="_blank" class="contact-card">
+          <div class="contact-card-icon">💼</div>
+          <div>
+            <strong>LinkedIn</strong>
+            <span>Mon profil professionnel</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="contact-form-col">
+      <h2>Envoyer un Message</h2>
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Nom complet</label>
+          <input type="text" placeholder="Votre nom"/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+509..."/>
+        </div>
+        <div class="form-group">
+          <label>Sujet</label>
+          <input type="text" placeholder="Objet de votre message"/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Votre message..."></textarea>
+        </div>
+        <button class="btn btn-primary full-width" onclick="sendMessage()">Envoyer ✉️</button>
+        <div id="form-msg" class="form-feedback"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ESPACE PHOTO / MAP -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ma Zone d'Intervention</h2>
+    </div>
+    <div class="photo-placeholder large map-placeholder">
+      <span>📍 Ajoute ici ta carte Google Maps ou une photo de ta zone</span>
+    </div>
+  </div>
+
+
+  
+ 
+
+
+</section>
+
+<footer class="main-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">ARTI<span class="accent">-</span>TECH</div>
+    <p>© 2026 Arti-Tech — Art &amp; Technologie</p>
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À Propos</a>
+      <a href="biblio.html">Bibliothèques</a>
+      <a href="calculatrice.html">Calculatrice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function sendMessage() {
+    const msg = document.getElementById('form-msg');
+    msg.textContent = '✅ Message envoyé avec succès ! Je vous répondrai bientôt.';
+    msg.style.color = '#f97316';
+  }
+</script>
+</body>
+</html>
